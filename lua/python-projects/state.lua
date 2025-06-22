@@ -1,24 +1,9 @@
----@alias StateKey "project_root"
-
-local M = {}
-
 ---@class State
----@field project_root string
-local state = {}
+---@field project_root_path string | nil
 
----@type fun(key: StateKey, value: any)
-function M.set(key, value)
-	state[key] = value
-end
+---@type State
+local state = {
+	project_root_path = nil,
+}
 
----@type fun(key: StateKey): any
-function M.get(key)
-	return state[key]
-end
-
----@return State
-function M.get_state()
-	return state
-end
-
-return M
+return state
